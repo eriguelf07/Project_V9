@@ -48,34 +48,34 @@ public class Box {
     public String toString() {
         return getLabel();
     }
-    
+    //Changed getWeight to Total Weight
     public double getWeight() {
-        return contents.getWeight();
+        return contents.getTotalWeight();
     }
-    
+    /*
     public void addProduct(Product product) {
         if (canFit(product)) {
             contents.addProduct(product, 1);
         }
-    }
-    
+    }*/
+    //changed 40 to 20
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        return p.getWeight() < 20;
     }
-    
+    //changed 40 to 20
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < 20;
     }
-    
+    //changed 40 to 20
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return 20 - this.getWeight();
     }
     
     public boolean isFragile() {
         return contents.hasFragileItems();
     }
-    
+    //changed return false to contents.hasFragileItems()
     public boolean isHazardous() {
-        return false;
+        return contents.hasFragileItems();
     }
 }
