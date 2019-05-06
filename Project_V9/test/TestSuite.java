@@ -11,11 +11,16 @@ import packer.CoordinatesTest;
 import packer.CustomerTest;
 import packer.DepotTest;
 import packer.ProductTest;
+import packer.BoxTest;
+import packer.ManifestTest;
+import packer.PackerTest;
+import packer.ProductWeightComparatorTest;
+
 
 
 /**
  *
- * @author bunta
+ * @author Frank Eriguel - 91030193
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -23,7 +28,13 @@ import packer.ProductTest;
     AddressTest.class,
     DepotTest.class,
     ProductTest.class,
-    CustomerTest.class
+    CustomerTest.class,
+    BoxTest.class,
+    ManifestTest.class,
+    PackerTest.class,
+    ProductWeightComparatorTest.class
+    
+    
 })
 
 public class TestSuite {

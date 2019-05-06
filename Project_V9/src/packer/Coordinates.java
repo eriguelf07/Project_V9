@@ -2,7 +2,7 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Frank Eriguel - 91030193
  */
 public class Coordinates {
     
@@ -13,22 +13,36 @@ public class Coordinates {
         this.x = x;
         this.y = y;
     }
-
+/**
+ * getX 
+ * @return x
+ */
     public double getX() {
         return x;
     }
-
+/**
+ * getY
+ * @return y
+ */
     public double getY() {
         return y;
     }
-    
+    /**
+     * euclideanDistanceTo
+     * @param other float
+     * @return distance float
+     */
     public double euclideanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();
         double dist = Math.pow((xDiff * xDiff + yDiff * yDiff),0.5);
         return dist;
     }
-    
+    /**
+     * manhattanDistanceTo
+     * @param other float
+     * @return distance float
+     */
     public double manhattanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();

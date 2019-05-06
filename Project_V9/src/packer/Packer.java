@@ -5,7 +5,11 @@ import java.util.List;
 
 /**
  *
- * @author bunta
+ * @author Frank Eriguel - 91030193
+ */
+/**
+ * Packer
+ * sets up how the class should be built
  */
 public class Packer {
 
@@ -14,7 +18,7 @@ public class Packer {
         Box b = null;
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
-                b = new Box(d,c);
+                b = new Box(c,d);
             }
             Product prodToAdd = m.getHeaviestUnder(b.remainingCapacity());
             if (prodToAdd == null) {

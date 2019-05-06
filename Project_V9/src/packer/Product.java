@@ -2,7 +2,7 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Frank Eriguel - 91030193
  */
 public class Product {
 
@@ -19,6 +19,7 @@ public class Product {
     }
 
     /**
+     * getWeight
      * @return the weight
      */
     public int getWeight() {
@@ -26,6 +27,7 @@ public class Product {
     }
 
     /**
+     * getName
      * @return the name
      */
     public String getName() {
@@ -33,6 +35,7 @@ public class Product {
     }
 
     /**
+     * isHazardous
      * @return the hazardous
      */
     public boolean isHazardous() {
@@ -40,16 +43,24 @@ public class Product {
     }
 
     /**
+     * isFragile
      * @return the fragile
      */
     public boolean isFragile() {
         return fragile;
     }
-
+/**
+ * toString
+ * @return this.getName
+ */
     public String toString() {
         return this.getName();
     }
-    
+    /**
+     * equals
+     * @param o float
+     * @return false if products are not equal
+     */
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {
             return false;

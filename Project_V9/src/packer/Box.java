@@ -2,20 +2,29 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Frank Eriguel - 91030193
  */
+
 public class Box {
     
     
     private Manifest contents;
     private Customer customer;
     private Depot depot; 
-
+/**
+ * Initializes variables
+ * @param customer string
+ * @param depot string
+ */
     public Box(Customer customer, Depot depot) {
         this.customer = customer;
         this.depot = depot;
         contents = new Manifest();
     }
+    /**
+     * addProduct
+     * @param product string
+     */
     
     public void addProduct(Product product) {
         if (canFit(product)) {
@@ -30,7 +39,10 @@ public class Box {
             contents.addProduct(product, quantity);
         }
     }
-   
+   /**
+    * getLabel
+    * @return return label.toString
+    */
     public String getLabel() {
         StringBuilder label = new StringBuilder();
         label.append(customer);
@@ -44,11 +56,18 @@ public class Box {
         }
         return label.toString();
     }
-    
+    /**
+     * toString
+     * @return getLabel
+     */
     public String toString() {
         return getLabel();
     }
     //Changed getWeight to Total Weight
+    /**
+     * getWeight
+     * @return gets Total weight
+     */
     public double getWeight() {
         return contents.getTotalWeight();
     }
@@ -76,6 +95,7 @@ public class Box {
     }
     //changed return false to contents.hasFragileItems()
     public boolean isHazardous() {
+        //if its hazardous its fragile kaboom!
         return contents.hasFragileItems();
     }
 }

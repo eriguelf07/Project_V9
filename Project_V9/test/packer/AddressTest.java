@@ -11,7 +11,7 @@ import org.junit.BeforeClass;
 
 /**
  *
- * @author bunta
+ * @author Frank Eriguel - 91030193
  */
 public class AddressTest {
     

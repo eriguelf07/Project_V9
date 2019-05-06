@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 /**
  *
- * @author I.M.Bad
+ * @author Frank Eriguel - 91030193
  */
 public class Manifest {
     
@@ -56,7 +56,11 @@ public class Manifest {
         }
         return weight;
     }
-    
+    /**
+     * getHeaviestUnder
+     * @param weight
+     * @return heaviest product
+     */
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
             if (p.getWeight() <= weight) {
@@ -65,15 +69,25 @@ public class Manifest {
         }
         return null;
     }
-    
+    /**
+     * isEmpty
+     * @return tests if the manifest is empty
+     */
     public boolean isEmpty() {
         return byWeight.isEmpty();
     }
-    
+    /**
+     * containsProduct
+     * @param p
+     * @return checks to see if the manifest has products in
+     */
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
-    
+    /**
+     * toString
+     * @return result.substring(0, result.length()-1)
+     */
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Product p : quantities.keySet()) {
@@ -84,7 +98,10 @@ public class Manifest {
         }
         return result.substring(0, result.length()-1);
     }
-    
+    /**
+     * hasFragileItems
+     * @return true if the product is fragile
+     */
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
@@ -93,5 +110,5 @@ public class Manifest {
         }
         return false;
     }
-    
+}
 

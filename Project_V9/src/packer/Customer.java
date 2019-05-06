@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author I.M.Bad
+ * @author Frank Eriguel - 91030193
  */
 public class Customer {
     
@@ -42,7 +42,10 @@ public class Customer {
         }
         return bestAddress;
     }
-
+/**
+ * toString
+ * @return this.getName String
+ */
     public String toString() {
         return this.getName();
     }
