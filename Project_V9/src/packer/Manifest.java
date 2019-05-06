@@ -12,9 +12,9 @@ import java.util.TreeSet;
 public class Manifest {
     
     // This tracks the quantity if each product in the manifest
-    private Map<Product, Integer> quantities;
+    private final Map<Product, Integer> quantities;
     // This keeps a list of all products ordered by weight
-    private Set<Product> byWeight;
+    private final Set<Product> byWeight;
 
     public Manifest() {
         quantities = new HashMap<>();
@@ -90,12 +90,16 @@ public class Manifest {
      */
     public String toString() {
         StringBuilder result = new StringBuilder();
-        for (Product p : quantities.keySet()) {
+        quantities.keySet().stream().map((p) -> {
             result.append(p.getName());
+            return p;
+        }).map((p) -> {
             result.append(" x ");
             result.append(quantities.get(p));
+            return p;
+        }).forEachOrdered((_item) -> {
             result.append("\n");
-        }
+        });
         return result.substring(0, result.length()-1);
     }
     /**
@@ -103,10 +107,8 @@ public class Manifest {
      * @return true if the product is fragile
      */
     public boolean hasFragileItems() {
-        for (Product p : quantities.keySet()) {
-            if (p.isFragile()) {
-                return true;
-            }
+        if (quantities.keySet().stream().anyMatch((p) -> (p.isFragile()))) {
+            return true;
         }
         return false;
     }

@@ -5,8 +5,8 @@ package packer;
  * @author Frank Eriguel - 91030193
  */
 public class Depot {
-    private String name;
-    private Address address;
+    private final String name;
+    private final Address address;
 /**
  * Initializes variables
  * @param name String
