@@ -71,6 +71,7 @@ public class Box {
     public double getWeight() {
         return contents.getTotalWeight();
     }
+    //COMMENTED ADDPRODUCT OUT BECAUSE ITS A DUPLICATE
     /*
     public void addProduct(Product product) {
         if (canFit(product)) {
